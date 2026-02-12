@@ -11,6 +11,9 @@ The skills in this repo are automatically available to Claude Code via a symlink
 
 ## Available Skills
 
+### ai-agent-builder
+Use when building AI agents from Jira tickets. Reads ticket requirements, Confluence agent cards, creates implementation plans, and builds n8n workflows with Jira updates.
+
 ### frontend-design
 Create distinctive, production-grade frontend interfaces with high design quality. Generates creative, polished code that avoids generic AI aesthetics.
 
