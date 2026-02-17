@@ -17,6 +17,9 @@ Use when building AI agents from Jira tickets. Reads ticket requirements, Conflu
 ### frontend-design
 Create distinctive, production-grade frontend interfaces with high design quality. Generates creative, polished code that avoids generic AI aesthetics.
 
+### image-gen
+Generate and edit images with Gemini 3 Pro (Nano Banana Pro), using Openrouter.
+
 ### n8n-code-javascript
 Write JavaScript code in n8n Code nodes. Use when writing JavaScript in n8n, using $input/$json/$node syntax, making HTTP requests with $helpers, working with dates using DateTime, troubleshooting Code node errors, or choosing between Code node modes.
 
