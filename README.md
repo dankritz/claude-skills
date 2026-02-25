@@ -11,6 +11,9 @@ The skills in this repo are automatically available to Claude Code via a symlink
 
 ## Available Skills
 
+### SlapRadar
+SlopRadar — comprehensive security audit skill. Scopes a target project, launches 5 parallel specialist agents (secrets management, input validation & injection, authentication & authorization, code execution & sandbox, infrastructure & CI/CD), and compiles all findings into a `security-review.md` in the project root. Use when running a security review or vulnerability assessment on any codebase.
+
 ### ai-agent-builder
 Use when building AI agents from Jira tickets. Reads ticket requirements, Confluence agent cards, creates implementation plans, and builds n8n workflows with Jira updates.
 
