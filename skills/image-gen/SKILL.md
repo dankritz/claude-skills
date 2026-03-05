@@ -24,16 +24,32 @@ Get an API key at https://openrouter.ai/settings/keys
 
 ## Command Structure
 
-**Generate a new image:**
+The script uses [PEP 723 inline metadata](https://peps.python.org/pep-0723/) and can be run two ways:
+
+**Preferred (auto-installs dependencies via uv):**
+```bash
+uv run ~/.claude/skills/image-gen/scripts/generate_image.py \
+  --prompt "your image description" \
+  --filename "output.png"
+```
+
+**Alternative (requires requests, pillow, python-dotenv already installed):**
 ```bash
 python3 ~/.claude/skills/image-gen/scripts/generate_image.py \
   --prompt "your image description" \
   --filename "output.png"
 ```
 
-**Edit an existing image:**
+**Generate a new image (uv):**
 ```bash
-python3 ~/.claude/skills/image-gen/scripts/generate_image.py \
+uv run ~/.claude/skills/image-gen/scripts/generate_image.py \
+  --prompt "your image description" \
+  --filename "output.png"
+```
+
+**Edit an existing image (uv):**
+```bash
+uv run ~/.claude/skills/image-gen/scripts/generate_image.py \
   --prompt "editing instructions" \
   --filename "output.png" \
   --input-image "path/to/source.png"
@@ -91,14 +107,14 @@ Derive the descriptive name from the user's prompt.
 
 **User:** "Generate a photo of a red fox sitting in a snowy forest at dawn"
 ```bash
-python3 ~/.claude/skills/image-gen/scripts/generate_image.py \
+uv run ~/.claude/skills/image-gen/scripts/generate_image.py \
   --prompt "A red fox sitting in a snowy forest at dawn, golden light filtering through pine trees, photorealistic" \
   --filename "2025-01-15-09-00-00-red-fox-snowy-forest.png"
 ```
 
 **User:** "Edit this image to add a sunset sky"
 ```bash
-python3 ~/.claude/skills/image-gen/scripts/generate_image.py \
+uv run ~/.claude/skills/image-gen/scripts/generate_image.py \
   --prompt "Replace the sky with a vibrant orange and pink sunset, keep everything else the same" \
   --filename "2025-01-15-09-01-00-sunset-edit.png" \
   --input-image "original.png"

@@ -194,6 +194,16 @@ def extract_image_from_response(data: dict) -> bytes | None:
             if raw:
                 return raw
 
+    # Some Gemini responses embed the image in reasoning_details
+    for detail in message.get("reasoning_details", []):
+        if not isinstance(detail, dict):
+            continue
+        b64 = detail.get("data", "")
+        if b64:
+            raw = try_decode_as_image(b64)
+            if raw:
+                return raw
+
     return None
 
 

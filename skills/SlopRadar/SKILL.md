@@ -60,7 +60,7 @@ Fill in `[PROJECT_TYPE]`, `[LANGUAGE]`, and `[KEY_COMPONENTS]` from these result
 
 ## Step 3 — Launch 5 Parallel Agents
 
-Read `AGENTS.md` for the full agent prompt templates. Then launch all five agents in a **single message** with five Task tool calls — never sequentially. Use `subagent_type: Explore` and `run_in_background: true` for all five.
+Read `~/.claude/skills/SlopRadar/AGENTS.md` for the full agent prompt templates. Then launch all five agents in a **single message** with five Task tool calls — never sequentially. Use `subagent_type: Explore` and `run_in_background: true` for all five.
 
 The five domains:
 1. **Secrets & Credential Management** — see Agent 1 in AGENTS.md
@@ -81,7 +81,7 @@ Wait for all 5 background agents to complete. You will receive notifications as 
 
 ## Step 5 — Compile `security-review.md`
 
-Read `OUTPUT.md` for the full output template and structure. Write `<PROJECT_PATH>/security-review.md`. Deduplicate findings that multiple agents flagged for the same issue (keep the most detailed description). Assign the highest severity given by any agent.
+Read `~/.claude/skills/SlopRadar/OUTPUT.md` for the full output template and structure. Write `<PROJECT_PATH>/security-review.md`. Deduplicate findings that multiple agents flagged for the same issue (keep the most detailed description). Assign the highest severity given by any agent.
 
 ---
 
