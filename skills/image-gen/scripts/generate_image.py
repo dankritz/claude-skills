@@ -8,7 +8,7 @@
 # ]
 # ///
 """
-Generate or edit images using Google's gemini-3-pro-image-preview via OpenRouter.
+Generate or edit images using Google's gemini-3.1-flash-image-preview via OpenRouter.
 
 Usage:
   # Generate a new image
@@ -28,7 +28,7 @@ from pathlib import Path
 
 
 OPENROUTER_API_URL = "https://openrouter.ai/api/v1/chat/completions"
-MODEL = "google/gemini-3-pro-image-preview"
+MODEL = "google/gemini-3.1-flash-image-preview"
 
 
 def load_env():
@@ -132,7 +132,7 @@ def extract_image_from_response(data: dict) -> bytes | None:
       - choices[0].message.content: list of parts with type "image_url" or "image"
       - choices[0].message.content: plain base64 data-URL string
       - choices[0].message.reasoning_details: list where an item has a "data" field
-        containing the base64-encoded image (observed with google/gemini-3-pro-image-preview)
+        containing the base64-encoded image (observed with google/gemini-3.1-flash-image-preview)
     Returns raw image bytes, or None.
     """
     try:
@@ -185,7 +185,7 @@ def extract_image_from_response(data: dict) -> bytes | None:
             return raw
 
     # OpenRouter puts Gemini-generated images in message.images[]
-    # (non-standard field, observed with google/gemini-3-pro-image-preview)
+    # (non-standard field, observed with google/gemini-3.1-flash-image-preview)
     for img_entry in message.get("images", []):
         url = img_entry.get("image_url", {}).get("url", "")
         if url:
@@ -228,7 +228,7 @@ def main():
     load_env()
 
     parser = argparse.ArgumentParser(
-        description="Generate or edit images using gemini-3-pro-image-preview via OpenRouter"
+        description="Generate or edit images using gemini-3.1-flash-image-preview via OpenRouter"
     )
     parser.add_argument("--prompt", "-p", required=True, help="Image description or editing instructions")
     parser.add_argument("--filename", "-f", required=True, help="Output file path (e.g. my-image.png)")

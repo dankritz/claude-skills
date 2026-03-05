@@ -6,7 +6,7 @@ allowed-tools: Bash
 
 # Image Generation & Editing Skill
 
-Generate new images from text prompts or edit/modify existing images using Google's `gemini-3-pro-image-preview` model via the OpenRouter API.
+Generate new images from text prompts or edit/modify existing images using Google's `gemini-3.1-flash-image-preview` model via the OpenRouter API.
 
 ---
 
@@ -93,7 +93,7 @@ Derive the descriptive name from the user's prompt.
 
 ## Model Capabilities
 
-`google/gemini-3-pro-image-preview` supports:
+`google/gemini-3.1-flash-image-preview` supports:
 - Text-to-image generation at high fidelity
 - Image-to-image editing with fine-grained control
 - Style transfers, lighting adjustments, background changes
